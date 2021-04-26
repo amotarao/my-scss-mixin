@@ -1,0 +1,19 @@
+@mixin paragraph-ellipsis($row: 2, $font-size: 1rem, $line-height: 1.5em) {
+  @if $row == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    // line-height に単位がついていない場合、font-size をかけて単位をつけた値にする
+    // 例: line-height: 1.5 -> 1rem * 1.5 = 1.5rem
+    @if unitless($line-height) {
+      $line-height: $font-size * $line-height;
+    }
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row;
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: $line-height * $row;
+  }
+}
