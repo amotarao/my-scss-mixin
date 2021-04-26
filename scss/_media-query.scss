@@ -1,10 +1,18 @@
 @mixin greater-than($width) {
+  @if unitless($width) {
+    $width: $width * 1px;
+  }
+
   @media screen and (min-width: $width) {
     @content;
   }
 }
 
 @mixin less-than($width) {
+  @if unitless($width) {
+    $width: $width * 1px;
+  }
+
   @media screen and (max-width: #{$width - 1px}) {
     @content;
   }
