@@ -1,5 +1,6 @@
 @mixin paragraph-ellipsis($row: 2, $font-size: 1rem, $line-height: 1.5em) {
   @if $row == 1 {
+    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
