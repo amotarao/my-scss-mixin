@@ -19,13 +19,13 @@
 }
 
 @mixin sp {
-  @include less-than($brakepoint) {
+  @include less-than($breakpoint) {
     @content;
   }
 }
 
 @mixin pc {
-  @include greater-than($brakepoint) {
+  @include greater-than($breakpoint) {
     @content;
   }
 }
